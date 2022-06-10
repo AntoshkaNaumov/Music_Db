@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS GenresPerformers (
 CREATE TABLE IF NOT EXISTS Albums (
 	album_id SERIAL PRIMARY KEY,
 	album_name VARCHAR(80) NOT NULL,
-	year_release VARCHAR(4) NOT NULL	
+	year_release VARCHAR(4) NOT null,
+	genge_id INTEGER REFERENCES Genres(id)
 );
 
 CREATE TABLE IF NOT EXISTS PerformersAlbums (
