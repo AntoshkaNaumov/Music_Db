@@ -1,11 +1,11 @@
 CREATE TABLE IF NOT EXISTS Performers (
-	id INTEGER PRIMARY KEY,
-	name VARCHAR(100) NOT NULL
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT null UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS Genres (
-	id INTEGER PRIMARY KEY,
-	title VARCHAR(60) NOT NULL
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(60) NOT null UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS GenresPerformers (
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS GenresPerformers (
 );
 
 CREATE TABLE IF NOT EXISTS Albums (
-	album_id INTEGER PRIMARY KEY,
+	album_id SERIAL PRIMARY KEY,
 	album_name VARCHAR(80) NOT NULL,
 	year_release VARCHAR(4) NOT NULL	
 );
@@ -28,14 +28,14 @@ CREATE TABLE IF NOT EXISTS PerformersAlbums (
 
 
 CREATE TABLE IF NOT EXISTS Tracks (
-	track_id INTEGER PRIMARY KEY,
+	track_id SERIAL PRIMARY KEY,
 	album_id INTEGER REFERENCES Albums(album_id),
 	track_name VARCHAR(100) NOT NULL,
 	duration double precision
 );
 
 CREATE TABLE IF NOT EXISTS Collections (
-	collection_id INTEGER PRIMARY KEY,
+	collection_id SERIAL PRIMARY KEY,
 	collection_name VARCHAR(100) NOT NULL,
 	year_release VARCHAR(4) NOT NULL		
 );
