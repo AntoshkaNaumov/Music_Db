@@ -26,7 +26,6 @@ CREATE TABLE IF NOT EXISTS PerformersAlbums (
 	CONSTRAINT pk_2 PRIMARY KEY (performer_id, album_id)
 );
 
-
 CREATE TABLE IF NOT EXISTS Tracks (
 	track_id SERIAL PRIMARY KEY,
 	album_id INTEGER REFERENCES Albums(album_id),
