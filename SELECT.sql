@@ -25,6 +25,3 @@ SELECT name FROM Performers where not name LIKE '%% %%';
 
 SELECT track_name FROM Tracks
 WHERE track_name ILIKE '%my%' or track_name ILIKE '%мой%';
-
-
-
